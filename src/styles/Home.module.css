@@ -22,15 +22,44 @@
 .cardItem {
   text-align: center;
   background-color: lightgoldenrodyellow;
-  border: 1px dashed rebeccapurple;
+  border: 1px solid rebeccapurple;
   padding: 1rem;
   border-radius: 0.25rem;
+  box-shadow: 2px 2px 2px 1px rgba(125, 69, 209, 0.2);
 }
 
 .markedCardItem {
   text-align: center;
-  background-color: lightskyblue;
+  background-color: rgba(147, 238, 144, 0.7);
   border: 1px dashed rebeccapurple;
   padding: 1rem;
   border-radius: 0.25rem;
+  box-shadow: 2px 2px 2px 1px rgba(125, 69, 209, 0.2);
+  animation: change-background 4s ease infinite;
+}
+
+.cardTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.cardEnglish {
+  font-size: 1.5rem;
+}
+
+.cardPinyin {
+  font-style: italic;
+  font-size: 1rem;
+}
+
+@keyframes change-background {
+  0% {
+    background: rgba(147, 238, 144, 0.7);
+  }
+  50% {
+    background: rgb(147, 238, 144);
+  }
+  100% {
+    background: rgba(147, 238, 144, 0.7);
+  }
 }

@@ -18,7 +18,7 @@ const Home: FunctionComponent = () => {
     const wordsToDisplay = hskDataset[section].map((word: Word, i) => {
       const { words, updateWord } = useContext(WordContext);
 
-      const onInteract = (item) => {
+      const onInteract = () => {
         console.log(word);
         updateWord(word);
       };
@@ -32,9 +32,9 @@ const Home: FunctionComponent = () => {
           key={i}
           onClick={onInteract}
         >
-          <h1>{word["Hàn Zì"]}</h1>
-          <h2>{word.English}</h2>
-          <h3>{word.Pinyin}</h3>
+          <h1 className={classes.cardTitle}>{word["Hàn Zì"]}</h1>
+          <h2 className={classes.cardEnglish}>{word.English}</h2>
+          <h3 className={classes.cardPinyin}>{word.Pinyin}</h3>
         </li>
       );
     });
@@ -53,12 +53,26 @@ const Home: FunctionComponent = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>HSK1 Prep</h1>
+        <h1 className={styles.title}>HSK1 Test Prep</h1>
 
         <p className={styles.description}>
           This page is designed to be used as a realtime study guide. After you
           understand a word you should tap it to mark it as learned.
         </p>
+        <WordContext.Consumer>
+          {(data) => {
+            return (
+              <p className={styles.description}>
+                {
+                  Object.keys(data.words)
+                    .map((word) => data.words[word])
+                    .filter((w) => w === true).length
+                }
+                words out of 150 have been acknolwedged!
+              </p>
+            );
+          }}
+        </WordContext.Consumer>
         {SectionComponents}
       </main>
     </div>

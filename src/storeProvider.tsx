@@ -6,12 +6,14 @@ const WordContextProvider = (props) => {
   const [words, setWord] = useState({});
 
   const updateWord = (word) => {
+    const val = words[word.English] || false;
     setWord({
-      [word]: true,
+      ...words,
+      ...{
+        [word.English]: !val,
+      },
     });
   };
-
-  useEffect(() => {}, []);
 
   return (
     <WordContext.Provider value={{ words, updateWord }}>
