@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import WordContextProvider from "../storeProvider";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function HSKApp({ Component, pageProps }) {
+  return (
+    <WordContextProvider>
+      <Component {...pageProps} />
+    </WordContextProvider>
+  );
 }
 
-export default MyApp
+export default HSKApp;

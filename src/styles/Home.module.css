@@ -26,3 +26,11 @@
   padding: 1rem;
   border-radius: 0.25rem;
 }
+
+.markedCardItem {
+  text-align: center;
+  background-color: lightskyblue;
+  border: 1px dashed rebeccapurple;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
