@@ -19,8 +19,7 @@ RUN yarn
 # build
 RUN yarn build
 
-
 # expose production port
-EXPOSE 8080
+EXPOSE 3000
 
 CMD [ "yarn", "start" ]

@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "docker:build": "docker build -t hsk1 .",
+    "docker:start": "docker run -t hsk1",
     "build": "next build",
     "start": "next start"
   },
