@@ -1,5 +1,6 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 
+const SESSION_CACHE_KEY = "hsk1_app_state";
 export const WordContext = createContext(undefined);
 
 const WordContextProvider = (props) => {
@@ -7,12 +8,13 @@ const WordContextProvider = (props) => {
 
   const updateWord = (word) => {
     const val = words[word.English] || false;
-    setWord({
+    const nextState = {
       ...words,
       ...{
         [word.English]: !val,
       },
-    });
+    };
+    setWord(nextState);
   };
 
   return (

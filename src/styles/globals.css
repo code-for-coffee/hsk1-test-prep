@@ -15,3 +15,28 @@ a {
 * {
   box-sizing: border-box;
 }
+
+header {
+  background-color: plum;
+  font-weight: bolder;
+  color: paleturquoise;
+  width: 120%;
+  top: 0;
+  position: sticky;
+  margin: 0;
+  margin: -1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid black;
+  box-shadow: 0 6px 6px -6px black;
+}
+
+header h3 {
+  padding: 0px;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  margin: 0;
+}
+
+header h4 {
+  right: 0;
+}

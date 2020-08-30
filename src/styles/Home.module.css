@@ -52,6 +52,13 @@
   font-size: 1rem;
 }
 
+.headerCount {
+  position: absolute;
+  color: rgb(40, 85, 182);
+  right: 100px;
+  margin-top: -1.5rem;
+}
+
 @keyframes change-background {
   0% {
     background: rgba(147, 238, 144, 0.7);

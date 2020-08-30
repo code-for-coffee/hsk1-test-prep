@@ -4,6 +4,7 @@ import hskDataset from "../../public/hsk1-dataset.json";
 import { FunctionComponent, Fragment, useContext } from "react";
 import classes from "../styles/Home.module.css";
 import { WordContext } from "../storeProvider";
+import WordCount from "../WordCount";
 
 type Word = {
   "Hàn Zì": string;
@@ -59,20 +60,7 @@ const Home: FunctionComponent = () => {
           This page is designed to be used as a realtime study guide. After you
           understand a word you should tap it to mark it as learned.
         </p>
-        <WordContext.Consumer>
-          {(data) => {
-            return (
-              <p className={styles.description}>
-                {
-                  Object.keys(data.words)
-                    .map((word) => data.words[word])
-                    .filter((w) => w === true).length
-                }
-                words out of 150 have been acknolwedged!
-              </p>
-            );
-          }}
-        </WordContext.Consumer>
+        <WordCount />
         {SectionComponents}
       </main>
     </div>
