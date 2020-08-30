@@ -1,0 +1,28 @@
+.title {
+  font-weight: bolder;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.description {
+  text-align: center;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.cardItem {
+  text-align: center;
+  background-color: lightgoldenrodyellow;
+  border: 1px dashed rebeccapurple;
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
