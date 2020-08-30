@@ -2,10 +2,13 @@
 FROM node:14
 
 # define env vars
-ENV NODE_ENV=production
+# ENV NODE_ENV=production
 
 # define location of our app in this container
 WORKDIR /usr/src/app
+
+# Bundle app source
+COPY . .
 
 # copy package & package-lock
 COPY package*.json ./
@@ -16,8 +19,6 @@ RUN yarn
 # build
 RUN yarn build
 
-# Bundle app source
-COPY . .
 
 # expose production port
 EXPOSE 8080
